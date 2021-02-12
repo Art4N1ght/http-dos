@@ -1,6 +1,6 @@
-import requests 
+import requests  # pip install requests
 import threading
-import fake_useragent
+import fake_useragent  # pip install fake_useragent
 
 from colorama import init, Fore, Back, Style
 
